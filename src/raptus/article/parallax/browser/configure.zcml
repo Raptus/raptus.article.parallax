@@ -1,0 +1,21 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    xmlns:article="http://namespaces.zope.org/article"
+    i18n_domain="raptus.article">
+
+    <article:component
+        name="parallax"
+        component=".parallax.Component"
+        viewlet=".parallax.ViewletFull"
+        selection=".parallax.IATImage"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody" />
+
+    <article:component
+        name="parallax.teaser"
+        component=".parallax.ComponentTeaser"
+        viewlet=".parallax.ViewletTeaser"
+        selection=".parallax.IATImage"
+        manager="plone.app.layout.viewlets.interfaces.IPortalTop" />
+
+</configure>

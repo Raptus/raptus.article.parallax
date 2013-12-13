@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      tal:omit-tag="">
+
+  <div class=""
+       tal:condition="view/image"
+       tal:attributes="class string:parallax component ${view/css_class}">
+    <a href="" rel="lightbox"
+       tal:omit-tag="not: view/url"
+       tal:attributes="href view/url;
+                       title view/caption;">
+      <img src=""
+           tal:replace="structure view/image" />
+    </a>
+    <p tal:condition="python: view.show_caption and view.caption_non_default"
+       tal:content="view/caption_non_default"
+       class="discreet">
+      Caption-text
+    </p>
+  </div>
+
+</html>
