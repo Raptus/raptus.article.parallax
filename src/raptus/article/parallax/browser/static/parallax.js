@@ -70,4 +70,7 @@ http://www.gnu.org/licenses/gpl.html
         $window.bind('scroll', update).resize(update);
         update();
     };
+    if(!is_touch_device()) {
+        jQuery(".parallax-viewlet").parallax("49%", 0.3);
+    }
 })(jQuery);

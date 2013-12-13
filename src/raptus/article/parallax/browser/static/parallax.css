@@ -1,0 +1,8 @@
+.parallax-viewlet {
+    min-height:350px;
+    padding:10px 0 10px;
+    background-attachment:fixed;
+    background-position:left top;
+    background-repeat:repeat;
+    margin-bottom:0px;
+}

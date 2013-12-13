@@ -4,21 +4,24 @@
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       tal:omit-tag="">
 
-  <div class=""
-       tal:condition="view/image"
+  <div class="parallax-viewlet-wrapper"
+       tal:condition="view/images"
        tal:attributes="class string:parallax component ${view/css_class}">
-    <a href="" rel="lightbox"
-       tal:omit-tag="not: view/url"
-       tal:attributes="href view/url;
-                       title view/caption;">
-      <img src=""
-           tal:replace="structure view/image" />
-    </a>
-    <p tal:condition="python: view.show_caption and view.caption_non_default"
-       tal:content="view/caption_non_default"
-       class="discreet">
-      Caption-text
-    </p>
+
+    <tal:item repeat="item view/images">
+    <div class="parallax-viewlet"
+    tal:attributes="style string:background-image:url(${item/img});">
+       Parallax bild
+    </div>
+    </tal:item>
   </div>
 
+  <script>
+    jQuery(document).ready(function() {
+      if(!is_touch_device()) {
+          jQuery(".parallax-viewlet").parallax("49%", 0.3);
+          console.log(jQuery(".parallax-viewlet"));
+      }
+    });
+  </script>
 </html>

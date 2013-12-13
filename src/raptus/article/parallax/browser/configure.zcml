@@ -1,13 +1,19 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:zcml="http://namespaces.zope.org/zcml"
+    xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:article="http://namespaces.zope.org/article"
     i18n_domain="raptus.article">
+
+    <!-- resource directory for widget static files -->
+    <browser:resourceDirectory
+        name="parallax_static"
+        directory="static" />
 
     <article:component
         name="parallax"
         component=".parallax.Component"
-        viewlet=".parallax.ViewletFull"
+        viewlet=".parallax.Viewlet"
         selection=".parallax.IATImage"
         manager="plone.app.layout.viewlets.interfaces.IAboveContentBody" />
 
