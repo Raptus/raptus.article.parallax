@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <object name="portal_properties" meta_type="Plone Properties Tool">
  <object name="raptus_article" meta_type="Plone Property Sheet" purge="False">
+    <property name="parallax_title" type="boolean" purge="False">True</property>
+    <property name="parallax_teaser_title" type="boolean" purge="False">True</property>
  </object>
 </object>

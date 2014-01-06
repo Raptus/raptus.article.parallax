@@ -22,6 +22,7 @@
         component=".parallax.ComponentTeaser"
         viewlet=".parallax.ViewletTeaser"
         selection=".parallax.IATImage"
-        manager="plone.app.layout.viewlets.interfaces.IPortalTop" />
+        manager="plone.app.layout.viewlets.interfaces.IAboveContent" />
+
 
 </configure>

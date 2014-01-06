@@ -2,7 +2,7 @@
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
-      tal:omit-tag="">
+      tal:omit-tag="python:1">
 
   <div class="parallax-viewlet-wrapper"
        tal:condition="view/images"
@@ -10,17 +10,27 @@
 
     <tal:item repeat="item view/images">
     <div class="parallax-viewlet"
-    tal:attributes="style string:background-image:url(${item/img});">
-       Parallax bild
+          tal:attributes="style string:background-image:url(${item/img});
+                          class string:component parallax-viewlet ${item/class}">
+        <metal:manage use-macro="context/raptus_article_macros/macros/manage" />
+        <div class="parallax-wrapper">
+          <h2 tal:condition="python: item['title'] and not item['title'] == item['id'] and view.show_title"
+              tal:content="item/title">
+            Title
+          </h2>
+          <p tal:condition="item/description"
+             tal:content="item/description">
+            Description
+          </p>
+        </div>
     </div>
     </tal:item>
   </div>
 
   <script>
     jQuery(document).ready(function() {
-      if(!is_touch_device()) {
+      if(!is_touch_device() && typeof parallax_running === "undefined") {
           jQuery(".parallax-viewlet").parallax("49%", 0.3);
-          console.log(jQuery(".parallax-viewlet"));
       }
     });
   </script>

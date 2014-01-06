@@ -13,6 +13,10 @@ Plugin URL: http://www.ianlunn.co.uk/plugins/jquery-parallax/
 Dual licensed under the MIT and GPL licenses:
 http://www.opensource.org/licenses/mit-license.php
 http://www.gnu.org/licenses/gpl.html
+
+Change Note from raptus ag:
+We switched firstTop with top for a correct handling
+with multiple parallax images.
 */
 
 (function( $ ){
@@ -24,15 +28,16 @@ http://www.gnu.org/licenses/gpl.html
     });
 
     $.fn.parallax = function(xpos, speedFactor, outerHeight) {
+        parallax_running = true;
         var $this = $(this);
         var getHeight;
-        var firstTop;
+        //var firstTop;
         var paddingTop = 0;
 
         //get the starting position of each element to have parallax applied to it
-        $this.each(function(){
-            firstTop = $this.offset().top;
-        });
+        //$this.each(function(){
+        //    firstTop = $this.offset().top;
+        //});
 
         if (outerHeight) {
             getHeight = function(jqo) {
@@ -62,15 +67,13 @@ http://www.gnu.org/licenses/gpl.html
                 if (top + height < pos || top > pos + windowHeight) {
                     return;
                 }
-
-                $this.css('backgroundPosition', xpos + " " + Math.round((firstTop - pos) * speedFactor) + "px");
+                //$element.css('backgroundPosition', xpos + " " + Math.round((firstTop - pos) * speedFactor) + "px");
+                console.log('ich tu dir was');
+                $element.css('backgroundPosition', xpos + " " + Math.round((top - pos) * speedFactor) + "px");
             });
         }
 
         $window.bind('scroll', update).resize(update);
         update();
     };
-    if(!is_touch_device()) {
-        jQuery(".parallax-viewlet").parallax("49%", 0.3);
-    }
 })(jQuery);

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2013-12-13 08:15+0000\n"
+"POT-Creation-Date: 2013-12-20 11:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,8 +17,19 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: raptus.article.parallax\n"
 
-#. Default: "Languages"
-#: ./extender.py:47
-#: ./skins/raptus_multilanguag/content_status_history.cpt:351
-msgid "label_languages"
+#: ./browser/parallax.py:30
+msgid "Images contained in the article are used for a parallax effect."
 msgstr ""
+
+#: ./browser/parallax.py:90
+msgid "Images contained in the article are used for a teaser parallax effect."
+msgstr ""
+
+#: ./browser/parallax.py:29
+msgid "Parallax effect"
+msgstr ""
+
+#: ./browser/parallax.py:89
+msgid "Teaser parallax effect"
+msgstr ""
+

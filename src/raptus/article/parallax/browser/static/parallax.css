@@ -1,8 +1,34 @@
+.parallax-viewlet-wrapper {
+    margin:0;
+    padding:0;
+}
+
 .parallax-viewlet {
+    position:relative;
     min-height:350px;
     padding:10px 0 10px;
     background-attachment:fixed;
-    background-position:left top;
     background-repeat:repeat;
+    background-size:cover;
     margin-bottom:0px;
+}
+
+.parallax-wrapper {
+    position:relative;
+    top:150px;
+    margin:0 auto;
+    max-width:1200px;
+}
+
+.parallax-viewlet h2 {
+    text-transform:uppercase;
+}
+
+.parallax-viewlet p {
+    font-size: 1.25em;
+}
+
+.parallax-viewlet h2,
+.parallax-viewlet p {
+    color:#ffffff;
 }

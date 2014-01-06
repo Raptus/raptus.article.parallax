@@ -56,21 +56,23 @@ class Viewlet(ViewletBase):
         else:
             items = provider.getImages(component=self.component)
         items = manageable.getList(items, self.component)
-        i = 0
-        l = len(items)
         for item in items:
             img = IImage(item['obj'])
-            item.update({'caption': img.getCaption(),
+            item.update({'title': img.getCaption(),
                          'img': img.getImageURL(self.thumb_size),
-                         'description': item['brain'].Description})
+                         'description': item['brain'].Description,
+                         'class': self.css_class})
             if item.has_key('show') and item['show']:
                 item['class'] += ' hidden'
-            w, h = item['obj'].getSize()
-            tw, th = img.getSize(self.thumb_size)
-            #if (tw < w and tw > 0) or (th < h and th > 0):
-                #item['rel'] = 'lightbox[%s]' % self.css_class
-            i += 1
         return items
+
+    @property
+    @memoize
+    def show_title(self):
+        """hide or show title. this can be set with a property in portal_porperties.
+        """
+        props = getToolByName(self.context, 'portal_properties').raptus_article
+        return props.getProperty('parallax_title', True)
 
 
 class IParallaxTeaser(interface.Interface):
@@ -98,4 +100,13 @@ class ViewletTeaser(Viewlet):
     """ Viewlet showing the teaser parallax effect of an image
     """
 
+    css_class = "parallax-teaser"
     component = "parallax.teaser"
+
+    @property
+    @memoize
+    def show_title(self):
+        """hide or show title. this can be set with a property in portal_porperties.
+        """
+        props = getToolByName(self.context, 'portal_properties').raptus_article
+        return props.getProperty('parallax_teaser_title', True)
