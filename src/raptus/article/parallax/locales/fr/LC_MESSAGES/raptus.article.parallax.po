@@ -1,0 +1,33 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: raptus.article.parallax\n"
+"POT-Creation-Date: 2013-12-20 11:19+0000\n"
+"PO-Revision-Date: 2013-12-20 11:10+0000\n"
+"Last-Translator: Raptus AG <dev@raptus.com>\n"
+"Language-Team: German <dev@raptus.com>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"Language-Code: fr\n"
+"Language-Name: Français\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: raptus.article.parallax\n"
+"X-Is-Fallback-For: fr-ch fr-fr\n"
+
+#: browser/parallax.py:30
+msgid "Images contained in the article are used for a parallax effect."
+msgstr ""
+
+#: browser/parallax.py:90
+msgid "Images contained in the article are used for a teaser parallax effect."
+msgstr ""
+
+#: browser/parallax.py:29
+msgid "Parallax effect"
+msgstr ""
+
+#: browser/parallax.py:89
+msgid "Teaser parallax effect"
+msgstr ""
