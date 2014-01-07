@@ -31,13 +31,7 @@ with multiple parallax images.
         parallax_running = true;
         var $this = $(this);
         var getHeight;
-        //var firstTop;
         var paddingTop = 0;
-
-        //get the starting position of each element to have parallax applied to it
-        //$this.each(function(){
-        //    firstTop = $this.offset().top;
-        //});
 
         if (outerHeight) {
             getHeight = function(jqo) {
@@ -67,8 +61,6 @@ with multiple parallax images.
                 if (top + height < pos || top > pos + windowHeight) {
                     return;
                 }
-                //$element.css('backgroundPosition', xpos + " " + Math.round((firstTop - pos) * speedFactor) + "px");
-                console.log('ich tu dir was');
                 $element.css('backgroundPosition', xpos + " " + Math.round((top - pos) * speedFactor) + "px");
             });
         }
